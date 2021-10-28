@@ -67,6 +67,17 @@ public class MyLinkedList {
 	}
 
 	/*
+	 * removes the first element (from the head) and decrements the size
+	 */
+	public INode pop() {
+
+		INode temp = this.head;
+		this.head = head.getNext();
+		size--;
+		return temp;
+	}
+
+	/*
 	 * returns the size of the List
 	 */
 	public int size() {
