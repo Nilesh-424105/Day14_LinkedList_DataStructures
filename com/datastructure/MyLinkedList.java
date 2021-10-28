@@ -35,6 +35,24 @@ public class MyLinkedList {
 	}
 
 	/*
+	 * Add the node at the end of the list (tail of the list) and increment the size
+	 * of list
+	 */
+	public void append(INode node) {
+		if (this.head == null) {
+			this.head = node;
+		}
+		if (this.tail == null) {
+			this.tail = node;
+		} else {
+			this.tail.setNext(node);
+			this.tail = node;
+
+		}
+		size++;
+	}
+
+	/*
 	 * returns the size of the List
 	 */
 	public int size() {

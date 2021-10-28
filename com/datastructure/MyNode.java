@@ -18,7 +18,6 @@ public class MyNode<K> implements INode<K> {
 	@Override
 	public void setKey(K key) {
 		this.key = key;
-
 	}
 
 	@Override
@@ -29,7 +28,6 @@ public class MyNode<K> implements INode<K> {
 	@Override
 	public void setNext(INode node) {
 		this.next = node;
-
 	}
 
 }

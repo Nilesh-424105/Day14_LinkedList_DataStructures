@@ -1,5 +1,8 @@
 package com.datastructure;
 
+/*
+ * Ability to create Linked List by appending 30 and 70 to 56
+ */
 public class MyNodeTest {
 
 	public static void main(String[] args) {
@@ -7,16 +10,16 @@ public class MyNodeTest {
 		System.out.println("Welcome To Linked List Computation Program");
 
 		// create a nodes
-		MyNode<Integer> myFirstNode = new MyNode<>(70);
-		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThirdNode = new MyNode<>(56);
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
 
 		MyLinkedList myLinkedList = new MyLinkedList();
 
-		// add the new element to the head (at the start)
+		// append the new element to the tail (at the end)
 		myLinkedList.add(myFirstNode);
-		myLinkedList.add(mySecondNode);
-		myLinkedList.add(myThirdNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
 		myLinkedList.printNodes();
 		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
