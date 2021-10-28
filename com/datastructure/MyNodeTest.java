@@ -1,7 +1,7 @@
 package com.datastructure;
 
 /*
- * Ability to search LinkedList to find Node with value 30
+ * Ability to insert 40 after 30 to the Linked List sequence of 56->30->70
  */
 public class MyNodeTest {
 
@@ -13,6 +13,7 @@ public class MyNodeTest {
 		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
 		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
 		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyNode<Integer> myNewNode = new MyNode<Integer>(40);
 
 		MyLinkedList myLinkedList = new MyLinkedList();
 
@@ -24,15 +25,11 @@ public class MyNodeTest {
 		myLinkedList.insert(myFirstNode, mySecondNode);
 		myLinkedList.printNodes();
 
-		// To Delete Last Element In Linked List By PopLast
-		myLinkedList.popLast();
-		System.out.println("LinkedList after popping the last element");
+		// Insert new element node 40 after node 30
+		System.out.println("LinkedList After adding 40 after 30");
+		INode searchForNode = myLinkedList.search();
+		myLinkedList.insert(searchForNode, myNewNode);
 		myLinkedList.printNodes();
-
-		// To Search Key 30
-		boolean find = myLinkedList.search();
-		System.out.println("Node with key 30 is Present in List :" + find);
-
 		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
 		if (result == true)
