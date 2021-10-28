@@ -7,18 +7,23 @@ public class MyNodeTest {
 		System.out.println("Welcome To Linked List Computation Program");
 
 		// create a nodes
-		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> myFirstNode = new MyNode<>(70);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
 
-		// Linking the nodes
-		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThirdNode);
-		boolean result = myFirstNode.getNext().equals(mySecondNode) && mySecondNode.getNext().equals(myThirdNode);
+		MyLinkedList myLinkedList = new MyLinkedList();
+
+		// add the new element to the head (at the start)
+		myLinkedList.add(myFirstNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
+		myLinkedList.printNodes();
+		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myFirstNode);
 		if (result == true)
-			System.out.println("LinkedList is created");
+			System.out.println("Nodes are linked");
 		else
-			System.out.println("LinkedList not created");
+			System.out.println("Nodes are not linked");
 	}
 
 }
