@@ -1,7 +1,8 @@
 package com.datastructure;
 
 /*
- * Ability to insert 40 after 30 to the Linked List sequence of 56->30->70
+ * Ability to delete 40 from the Linked List 
+ * sequence of 56->30->40->70 and show the size of LinkedList is 3
  */
 public class MyNodeTest {
 
@@ -27,9 +28,16 @@ public class MyNodeTest {
 
 		// Insert new element node 40 after node 30
 		System.out.println("LinkedList After adding 40 after 30");
-		INode searchForNode = myLinkedList.search();
+		INode searchForNode = myLinkedList.search(30);
 		myLinkedList.insert(searchForNode, myNewNode);
 		myLinkedList.printNodes();
+
+		// Delete new element node 40
+		System.out.println("LinkedList after deleting 40");
+		myLinkedList.deleteNode(40);
+		myLinkedList.printNodes();
+		// Showing Size Of Linked List is 3
+		System.out.println("Size of LinkedList :" + myLinkedList.size());
 		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
 		if (result == true)

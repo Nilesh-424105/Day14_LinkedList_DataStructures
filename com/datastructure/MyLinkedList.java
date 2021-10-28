@@ -3,8 +3,7 @@ package com.datastructure;
 /*
  * Custom Linked List Implementation with operation
  */
-
-public class MyLinkedList {
+public class MyLinkedList<K> {
 
 	// Declare Variables
 	public INode head;
@@ -33,7 +32,6 @@ public class MyLinkedList {
 			this.head.setNext(temp);
 		}
 		size++;
-
 	}
 
 	/*
@@ -49,7 +47,6 @@ public class MyLinkedList {
 		} else {
 			this.tail.setNext(node);
 			this.tail = node;
-
 		}
 		size++;
 	}
@@ -63,14 +60,12 @@ public class MyLinkedList {
 		newNode.setNext(temp);
 
 		size++;
-
 	}
 
 	/*
 	 * removes the first element (from the head) and decrements the size
 	 */
 	public INode pop() {
-
 		INode temp = this.head;
 		this.head = head.getNext();
 		size--;
@@ -81,7 +76,6 @@ public class MyLinkedList {
 	 * removes the last element (from the tail) and decrement the size
 	 */
 	public INode popLast() {
-
 		INode temp = this.head;
 		while (!temp.getNext().equals(tail)) {
 			temp = temp.getNext();
@@ -95,7 +89,7 @@ public class MyLinkedList {
 	/*
 	 * searches for a given key in list and returns the INode if it finds key
 	 */
-	public INode search() {
+	public INode search(K key) {
 		INode node = head;
 		while (!node.getKey().equals(30)) {
 			node = node.getNext();
@@ -104,9 +98,30 @@ public class MyLinkedList {
 	}
 
 	/*
+	 * Delete new added node and decrement the size
+	 */
+	public INode deleteNode(K key) {
+		INode node = head;
+		INode previous = null;
+		while (!node.getKey().equals(key)) {
+			previous = node;
+			node = node.getNext();
+		}
+		previous.setNext(node.getNext());
+		size--;
+		return node;
+	}
+
+	/*
 	 * returns the size of the List
 	 */
 	public int size() {
+		INode node = head;
+		int count = 1;
+		while (node.getNext() != null) {
+			count = count + 1;
+			node = node.getNext();
+		}
 		return this.size;
 	}
 
@@ -114,9 +129,7 @@ public class MyLinkedList {
 	 * Pints the node keys in the List
 	 */
 	public void printNodes() {
-
 		StringBuilder nodes = new StringBuilder("Node keys: ");
-
 		INode temp = this.head;
 		while (temp != null) {
 			nodes.append(temp.getKey());
@@ -126,6 +139,5 @@ public class MyLinkedList {
 			temp = temp.getNext();
 		}
 		System.out.println(nodes);
-
 	}
 }
