@@ -78,6 +78,21 @@ public class MyLinkedList {
 	}
 
 	/*
+	 * removes the last element (from the tail) and decrement the size
+	 */
+	public INode popLast() {
+
+		INode temp = this.head;
+		while (!temp.getNext().equals(tail)) {
+			temp = temp.getNext();
+		}
+		this.tail = temp;
+		tail.setNext(null);
+		size--;
+		return temp;
+	}
+
+	/*
 	 * returns the size of the List
 	 */
 	public int size() {

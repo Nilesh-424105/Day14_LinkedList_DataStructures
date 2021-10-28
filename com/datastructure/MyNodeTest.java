@@ -1,7 +1,7 @@
 package com.datastructure;
 
 /*
- * Ability to delete the first element in the LinkedList of sequence 56->30->70
+ * Ability to delete the Last element in the LinkedList of sequence 56->30->70
  */
 public class MyNodeTest {
 
@@ -23,9 +23,10 @@ public class MyNodeTest {
 		myLinkedList.append(myThirdNode);
 		myLinkedList.insert(myFirstNode, mySecondNode);
 		myLinkedList.printNodes();
-		// To Delete First Element In Linked List
-		myLinkedList.pop();
-		System.out.println("LinkedList after popping the first element");
+
+		// To Delete Last Element In Linked List By PopLast
+		myLinkedList.popLast();
+		System.out.println("LinkedList after popping the last element");
 		myLinkedList.printNodes();
 
 		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
