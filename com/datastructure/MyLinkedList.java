@@ -6,10 +6,12 @@ package com.datastructure;
 
 public class MyLinkedList {
 
+	// Declare Variables
 	public INode head;
 	public INode tail;
 	private int size;
 
+	// Default Constructor
 	public MyLinkedList() {
 		this.head = null;
 		this.tail = null;
@@ -50,6 +52,18 @@ public class MyLinkedList {
 
 		}
 		size++;
+	}
+
+	/*
+	 * inserts the new node next to the myNode and increment the size
+	 */
+	public void insert(INode myNode, INode newNode) {
+		INode temp = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(temp);
+
+		size++;
+
 	}
 
 	/*
