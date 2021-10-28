@@ -93,6 +93,22 @@ public class MyLinkedList {
 	}
 
 	/*
+	 * searches for a given key in list and returns the INode if it finds key
+	 */
+	public boolean search() {
+		INode node = head;
+		boolean check;
+		while (!node.getKey().equals(30)) {
+			node = node.getNext();
+		}
+		if (node.getKey().equals(30))
+			check = true;
+		else
+			check = false;
+		return check;
+	}
+
+	/*
 	 * returns the size of the List
 	 */
 	public int size() {

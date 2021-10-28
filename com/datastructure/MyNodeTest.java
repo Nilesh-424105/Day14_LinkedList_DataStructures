@@ -1,7 +1,7 @@
 package com.datastructure;
 
 /*
- * Ability to delete the Last element in the LinkedList of sequence 56->30->70
+ * Ability to search LinkedList to find Node with value 30
  */
 public class MyNodeTest {
 
@@ -28,6 +28,10 @@ public class MyNodeTest {
 		myLinkedList.popLast();
 		System.out.println("LinkedList after popping the last element");
 		myLinkedList.printNodes();
+
+		// To Search Key 30
+		boolean find = myLinkedList.search();
+		System.out.println("Node with key 30 is Present in List :" + find);
 
 		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
